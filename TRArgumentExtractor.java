@@ -17,6 +17,10 @@ public class TRArgumentExtractor {
         this.args = args;
     }
 
+    /**
+     * This class main method after constructing the object this method should be called
+     * @return
+     */
     public boolean extract() {
         try {
             filePath = extractFilePath();
@@ -48,7 +52,12 @@ public class TRArgumentExtractor {
         return true;
     }
 
-    protected String extractFilePath() throws IOException {
+    /**
+     * Helper method for extracting the filepath and checking if the extension is correct.
+     * @return
+     * @throws IOException
+     */
+    String extractFilePath() throws IOException {
         if(args[0] == null) {
             return null;
         }
@@ -62,7 +71,13 @@ public class TRArgumentExtractor {
         throw new IOException();
     }
 
-    protected ArrayList<Date> extractDates() throws ParseException {
+    /**
+     * Helper method that will create date object when the dates are correctly formatted to yyyy-MM-dd HH:mm:ss
+     * the UTC timezone will be selected by default
+     * @return
+     * @throws ParseException
+     */
+    ArrayList<Date> extractDates() throws ParseException {
         if(args[1] == null || args[2] == null) {
             return null;
         }
@@ -95,14 +110,5 @@ public class TRArgumentExtractor {
 
     public Date getEndDate() {
         return endDate;
-    }
-
-    @Override
-    public String toString() {
-        return "TRArgumentExtractor{" +
-                "filePath='" + filePath + '\'' +
-                ", startDate=" + startDate +
-                ", endDate=" + endDate +
-                '}';
     }
 }

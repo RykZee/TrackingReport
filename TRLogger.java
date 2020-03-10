@@ -19,7 +19,7 @@ public class TRLogger {
     private String[][] table;
     private int urlPosition;
 
-    HashMap<String, Integer> pageViews;
+    private HashMap<String, Integer> pageViews;
 
     public TRLogger(String filePath, Date startDate, Date endDate) {
         this.filePath = filePath;
@@ -103,7 +103,7 @@ public class TRLogger {
      * Adds new URLs from String given, if the URL already exists page views will be increased by every method call.
      * @param url
      */
-    private void addUrl(String url) {
+    void addUrl(String url) {
         // Array needs to be bigger, doubling nr of columns
         if(urlPosition == table[0].length) {
             resize(table.length, table[0].length * 2);
@@ -129,7 +129,7 @@ public class TRLogger {
      * @param url
      * @param userId
      */
-    private void addUserId(String url, String userId) {
+    void addUserId(String url, String userId) {
         if(url == null) {
             System.err.println("Found null url for userId: " + userId);
             return;
@@ -183,7 +183,7 @@ public class TRLogger {
      * @param url
      * @return
      */
-    private int getVisitors(String url) {
+    int getVisitors(String url) {
         ArrayList<String> list = new ArrayList<>();
 
         int col = Integer.MAX_VALUE;
@@ -231,4 +231,8 @@ public class TRLogger {
         }
         table = tempArray;
     }
+
+    HashMap<String, Integer> getPageViews() { return pageViews; }
+
+    String[][] getTable() { return table; }
 }
