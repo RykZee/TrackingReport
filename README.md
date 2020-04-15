@@ -9,7 +9,7 @@ The log file should be formatted as this with | characters used as delimiters an
 |2013-09-01 09:00:00UTC |/contact.html |12345 |\
 |2013-09-01 09:00:00UTC |/contact.html |12346 |\
 |2013-09-01 10:00:00UTC |/contact.html |12345 |\
-|2013-09-01 11:00:00UTC |/contact.html |12347 |\
+|2013-09-01 11:00:00UTC |/contact.html |12347 |
 
 ### Prerequisites
 
