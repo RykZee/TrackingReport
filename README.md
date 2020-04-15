@@ -5,7 +5,7 @@ Reads a log file for a website with certain formatting and outputs an output.txt
 ## Formatting of log file
 The log file should be formatted as this with | characters used as delimiters and timestamp being the leftmost piece of data.
 
-|timestamp              |url           |userid|
+|timestamp              |url           |userid|\
 |2013-09-01 09:00:00UTC |/contact.html |12345 |
 |2013-09-01 09:00:00UTC |/contact.html |12346 |
 |2013-09-01 10:00:00UTC |/contact.html |12345 |
